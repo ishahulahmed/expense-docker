@@ -18,8 +18,8 @@ yum install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker
 # Start Docker service
 systemctl start docker || { echo -e "${R}Error starting Docker service.${N}" >&2; exit 1; }
 
-# Display status of Docker service
-systemctl status docker || { echo -e "${R}Error getting Docker service status.${N}" >&2; exit 1; }
+# Display status of Docker service and redirect output to a file
+systemctl status docker > /tmp/docker_status.log || { echo -e "${R}Error getting Docker service status.${N}" >&2; exit 1; }
 
 # Enable Docker service to start on boot
 systemctl enable docker || { echo -e "${R}Error enabling Docker service.${N}" >&2; exit 1; }
