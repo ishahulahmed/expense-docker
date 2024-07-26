@@ -4,13 +4,17 @@ networks:
   default:
     name: expense # --if not therer it will create
 volumes:
-  mysql: # docker volmue create mysql
+  mysql: 
+    external: true
+     # docker volmue created externally (docker volme create expense)
 services:
   mysql:
     image: mysql:v1.0.0
     container_name: mysql # --name mysql
     volumes:
-      - mysql:/var/lib/mysql # -v volume-name:/path/in/container
+      - source: mysql
+        target: /var/lib/mysql 
+        type: volume # -v volume-name:/path/in/container
   backend:
     image: backend:v1.0.0
     container_name: backend
