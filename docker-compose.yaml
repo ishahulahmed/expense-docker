@@ -5,8 +5,8 @@ networks:
     name: expense # --if not therer it will create
 volumes:
   mysql: 
-    external: true
-     # docker volmue created externally (docker volme create expense)
+    external: true # if true, you need to create manually
+     # docker volme create expense
 services:
   mysql:
     image: mysql:v1.0.0
