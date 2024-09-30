@@ -1,7 +1,7 @@
 #!/bin/bash
-
+dfdfdf
 sudo growpart /dev/nvme0n1 4
-
+fdfdfdf dfdf
 sudo lvextend -l +50%FREE /dev/RootVG/rootVol
 sudo lvextend -l +50%FREE /dev/RootVG/varVol
 
